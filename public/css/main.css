@@ -47,15 +47,15 @@ header nav ul li a {
 
 header hero {
     display: flex;
-    overflow: hidden;
     position: relative;
     height: 500px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 header hero .hero-img {
     width: 100%;
     height: fit-content;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
 .hero-text-container {
@@ -79,9 +79,25 @@ header hero .hero-img {
 
 section {
     padding: 5rem 10rem;
+    font-size: 1.5rem;
     background-color: white;
 }
 
 section h2 {
     text-align: center;
+}
+
+.gallery-image-container {
+    width: 100%;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-image-container .gallery-image {
+    width: inherit;
+}
+
+.gallery-image-container .text-container {
+    text-align: right;
 }
