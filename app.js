@@ -25,16 +25,22 @@ app.get('/', (req, res) =>{
     res.render("Home", {title: "Home"})
 })
 
-app.get('/about', (req, res) =>{
+app.get('/about', (req, res) => {
     res.render("About", {title: "About"})
 })
 
-app.get('/works', (req, res) =>{
+app.get('/works', (req, res) => {
     res.render("Works", {title: "Works"})
 })
 
-app.get('/gallery', (req, res) =>{
-    res.render("Gallery", {title: "Gallery"})
+app.get('/gallery', (req, res) => {
+    const galleryImages = [
+        {
+            src: "https://cdn.britannica.com/06/202006-050-64C85CC7/Neil-deGrasse-Tyson-2018.jpg",
+            alt: "Neil deGrass Tyson in a suit",
+        },
+    ]
+    res.render("Gallery", {title: "Gallery", gallery: galleryImages})
 })
 
 app.get("*", (req, res) =>{
