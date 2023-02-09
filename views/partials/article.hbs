@@ -1,10 +1,12 @@
 <article>
-    <div class="text-container">
+    <div class="heading">
         {{#if title}}
         <h2>{{title}}</h2>
         {{/if}}
         {{#if date}}
         <p class="article-date">{{date}}</p>
+    </div>
+    <div class="text-container">
         {{/if}}
         {{#each paragraphs}}
             <p>{{this}}</p>
