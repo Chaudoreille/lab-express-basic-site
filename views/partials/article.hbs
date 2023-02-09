@@ -1,0 +1,21 @@
+<article>
+    <div class="text-container">
+        {{#if title}}
+        <h2>{{title}}</h2>
+        {{/if}}
+        {{#if date}}
+        <p class="article-date">{{date}}</p>
+        {{/if}}
+        {{#each paragraphs}}
+            <p>{{this}}</p>
+        {{/each}}
+    </div>
+    {{#if image}}
+    <div class="image-container">
+        <img src="{{image.url}}" alt="{{#if image.alt}}{{image.alt}}{{/if}}" class="article-image">
+        {{#if image.legend}}
+        <p class="legend"></p>
+        {{/if}}
+    </div>
+    {{/if}}
+</article>

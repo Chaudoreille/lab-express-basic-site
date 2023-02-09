@@ -4,6 +4,8 @@
 
 const express = require("express")
 const hbs = require("hbs")
+const fs = require('fs')
+
 /**
  * Create app object
  */
@@ -21,16 +23,21 @@ hbs.registerPartials(`${__dirname}/views/partials`)
 /**
  * Routing
  */
-app.get('/', (req, res) =>{
-    res.render("Home", {title: "Home"})
+app.get('/', (req, res) => {
+    res.locals.title = "Home"
+    res.render("Home")
 })
 
 app.get('/about', (req, res) => {
-    res.render("About", {title: "About"})
+    res.locals.title = "About"
+    res.render("About")
 })
 
 app.get('/works', (req, res) => {
-    res.render("Works", {title: "Works"})
+    res.locals.title = "Career"
+    res.locals.articles = JSON.parse(fs.readFileSync(`${__dirname}/private/data/works.json`).toString())
+
+    res.render("Works")
 })
 
 app.get('/gallery', (req, res) => {
